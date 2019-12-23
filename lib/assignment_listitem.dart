@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './assignmentdetail_screen.dart';
 
 class AssignmentListItem extends StatelessWidget {
   final String assignmentName;
@@ -59,6 +60,12 @@ class AssignmentListItem extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
+        onTap: () {
+          Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return AssignementDetail(assignmentName: assignmentName, courseName: courseName,);
+                      }));
+        },
       ),
     );
   }
