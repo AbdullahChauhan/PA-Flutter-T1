@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pa_flutter_t1/assignments_screen.dart';
+
+import './assignment_listitem.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -31,14 +34,18 @@ class Dashboard extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(color: Colors.white),
                   ),
-                  ListTile(
-                    title: Text('Dashboard'),
-                  ),
+                  ListTile(title: Text('Dashboard'), onTap: () {}),
                   Divider(
                     height: 2.0,
                   ),
                   ListTile(
                     title: Text('Assignments'),
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return Assignments();
+                      }));
+                    },
                   ),
                   Divider(
                     height: 2.0,
@@ -101,50 +108,58 @@ class Dashboard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black12),
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          '30',
-                          style: TextStyle(
-                            fontSize: 36.0,
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 24.0, vertical: 16.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.black12),
+                        borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            '30',
+                            style: TextStyle(
+                              fontSize: 36.0,
+                            ),
                           ),
-                        ),
-                        Text('Total Assignments')
-                      ],
+                          Text('Total Assignments')
+                        ],
+                      ),
                     ),
                   ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                      boxShadow: [
-                        new BoxShadow(
-                          color: Colors.black12,
-                          offset: Offset(0.0, 10.0),
-                          blurRadius: 10.0,
-                        )
-                      ],
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          '50%',
-                          style: TextStyle(fontSize: 36.0, color: Colors.white),
-                        ),
-                        Text(
-                          'Total Percentage',
-                          style: TextStyle(color: Colors.white),
-                        )
-                      ],
+                  SizedBox(
+                    width: 8.0,
+                  ),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 24.0, vertical: 16.0),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                        boxShadow: [
+                          new BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(0.0, 10.0),
+                            blurRadius: 10.0,
+                          )
+                        ],
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            '50%',
+                            style:
+                                TextStyle(fontSize: 36.0, color: Colors.white),
+                          ),
+                          Text(
+                            'Total Percentage',
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
@@ -166,142 +181,34 @@ class Dashboard extends StatelessWidget {
               height: 175,
               child: ListView(
                 children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black12),
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                    ),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.assignment,
-                        color: Theme.of(context).primaryColor,
-                        size: 32.0,
-                      ),
-                      title: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text('TMS'),
-                          Text('Flutter Course'),
-                        ],
-                      ),
-                      trailing: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 6.0),
-                        decoration: BoxDecoration(
-                          color: Colors.lime,
-                          borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                        ),
-                        child: Text(
-                          'Pending',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  AssignmentListItem(
+                    assignmentName: 'TMS',
+                    courseName: 'Flutter Course',
+                    status: 'Pending',
                   ),
                   SizedBox(
                     height: 8.0,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black12),
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                    ),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.assignment,
-                        color: Theme.of(context).primaryColor,
-                        size: 32.0,
-                      ),
-                      title: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text('Website Design'),
-                          Text('UI/UX Course'),
-                        ],
-                      ),
-                      trailing: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 6.0),
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                        ),
-                        child: Text(
-                          'To Late',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  AssignmentListItem(
+                    assignmentName: 'Website Design',
+                    courseName: 'UI/UX Course',
+                    status: 'To Late',
                   ),
                   SizedBox(
                     height: 8.0,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black12),
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                    ),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.assignment,
-                        color: Theme.of(context).primaryColor,
-                        size: 32.0,
-                      ),
-                      title: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text('Database Design'),
-                          Text('RDBMS Course'),
-                        ],
-                      ),
-                      trailing: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 6.0),
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                        ),
-                        child: Text(
-                          'To Late',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  AssignmentListItem(
+                    assignmentName: 'Database Design',
+                    courseName: 'RDBMS Course',
+                    status: 'Submit',
                   ),
                   SizedBox(
                     height: 8.0,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black12),
-                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                    ),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.assignment,
-                        color: Theme.of(context).primaryColor,
-                        size: 32.0,
-                      ),
-                      title: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text('SMS'),
-                          Text('WebApp Course'),
-                        ],
-                      ),
-                      trailing: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 6.0),
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                        ),
-                        child: Text(
-                          'To Late',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  AssignmentListItem(
+                    assignmentName: 'Home Automation',
+                    courseName: 'IOT Course',
+                    status: 'To Late',
                   ),
                 ],
               ),
@@ -318,57 +225,56 @@ class Dashboard extends StatelessWidget {
             SizedBox(
               height: 12.0,
             ),
-            Expanded(
-              child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black12),
-                    borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0),
-                        child: Text(
-                          'Flutter Course',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                          ),
+            Container(
+                height: 100,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.black12),
+                  borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      child: Text(
+                        'Flutter Course',
+                        style: TextStyle(
+                          fontSize: 18.0,
                         ),
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(6.0),
-                            bottomRight: Radius.circular(6.0)),
-                        child: Container(
-                            width: 110.0,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                                color: Theme.of(context).primaryColor),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  '3 Months',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  'Remaining',
-                                  style: TextStyle(
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(6.0),
+                          bottomRight: Radius.circular(6.0)),
+                      child: Container(
+                          width: 110.0,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColor),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                '3 Months',
+                                style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 14.0,
-                                  ),
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'Remaining',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.0,
                                 ),
-                              ],
-                            )),
-                      )
-                    ],
-                  )),
-            ),
+                              ),
+                            ],
+                          )),
+                    )
+                  ],
+                )),
           ],
         ),
       ),
