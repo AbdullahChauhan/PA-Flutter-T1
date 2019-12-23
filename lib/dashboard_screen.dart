@@ -83,7 +83,7 @@ class Dashboard extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-              child: Padding(
+        child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +134,10 @@ class Dashboard extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             text('50%', color: COLOR_WHITE, fontSize: 36.0),
-                            text('Total Percentage', color: COLOR_WHITE, fontSize: 12.0)
+                            text(
+                              'Total Percentage',
+                              color: COLOR_WHITE,
+                            )
                           ],
                         ),
                       ),
@@ -218,45 +221,18 @@ class Dashboard extends StatelessWidget {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                text('3 Months', fontSize: 16.0, color: COLOR_WHITE, fontWeight: FontWeight.bold),
-                                text('Remaining', fontSize: 14.0, color: COLOR_WHITE,),
+                                text('3 Months',
+                                    fontSize: 16.0,
+                                    color: COLOR_WHITE,
+                                    fontWeight: FontWeight.bold),
+                                text(
+                                  'Remaining',
+                                  fontSize: 14.0,
+                                  color: COLOR_WHITE,
+                                ),
                               ],
                             )),
-                      ),
-                    ],
-                  )),
-                  SizedBox(height: 8.0,),
-                  Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black12),
-                    borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0),
-                        child: text('WebApp Course', fontSize: 18.0),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(6.0),
-                            bottomRight: Radius.circular(6.0)),
-                        child: Container(
-                            width: 110.0,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                                color: Theme.of(context).primaryColor),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                text('4 Months', fontSize: 16.0, color: COLOR_WHITE, fontWeight: FontWeight.bold),
-                                text('Remaining', fontSize: 14.0, color: COLOR_WHITE,),
-                              ],
-                            )),
-                      ),
+                      )
                     ],
                   )),
             ],
