@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pa_flutter_t1/assignments_screen.dart';
-import 'package:pa_flutter_t1/constants.dart';
+import './constants.dart';
 
 import './assignment_listitem.dart';
+import 'navigationdrawer.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -16,72 +16,7 @@ class Dashboard extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[],
       ),
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 9,
-              child: ListView(
-                children: <Widget>[
-                  UserAccountsDrawerHeader(
-                    currentAccountPicture: CircleAvatar(
-                      child: Image.asset('assets/images/logo.png'),
-                      backgroundColor: COLOR_WHITE,
-                    ),
-                    accountEmail: text('abd@xyz.com', color: COLOR_BLACK),
-                    accountName: text('Pak Academy', color: COLOR_BLACK),
-                    decoration: BoxDecoration(color: COLOR_WHITE),
-                  ),
-                  ListTile(title: Text('Dashboard'), onTap: () {}),
-                  Divider(
-                    height: 2.0,
-                  ),
-                  ListTile(
-                    title: Text('Assignments'),
-                    onTap: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (_) {
-                        return Assignments();
-                      }));
-                    },
-                  ),
-                  Divider(
-                    height: 2.0,
-                  ),
-                  ListTile(
-                    title: Text('Programs'),
-                  ),
-                  Divider(
-                    height: 2.0,
-                  ),
-                  ListTile(
-                    title: Text('Logout'),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                padding: EdgeInsets.all(16.0),
-                width: double.infinity,
-                color: Theme.of(context).primaryColor,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Icon(
-                      Icons.phone,
-                      color: COLOR_WHITE,
-                      size: 28.0,
-                    ),
-                    text('+92399-9999999', color: COLOR_WHITE, fontSize: 18.0)
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+      drawer: NavigationDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -242,3 +177,5 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
+
+

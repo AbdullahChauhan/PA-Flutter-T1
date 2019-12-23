@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pa_flutter_t1/constants.dart';
+import './constants.dart';
 import './dashboard_screen.dart';
 
 class Login extends StatelessWidget {

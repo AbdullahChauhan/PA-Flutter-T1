@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pa_flutter_t1/constants.dart';
+import './constants.dart';
 
 class AssignementDetail extends StatelessWidget {
   final String assignmentName;
