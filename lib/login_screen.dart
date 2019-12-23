@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pa_flutter_t1/constants.dart';
 import './dashboard_screen.dart';
 
 class Login extends StatelessWidget {
@@ -12,7 +13,7 @@ class Login extends StatelessWidget {
           Center(
             child: CircleAvatar(
               child: Image.asset('assets/images/logo.png'),
-              backgroundColor: Colors.white,
+              backgroundColor: COLOR_WHITE,
               maxRadius: 75.0,
             ),
           ),
@@ -51,12 +52,28 @@ class Login extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                   ),
                   padding: EdgeInsets.all(12),
-                  color: Theme.of(context).primaryColor,
-                  child: Center(
-                      child: Text(
-                    'Sign In',
-                    style: TextStyle(color: Colors.white),
-                  )),
+                  color: COLOR_PRIMARY,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        // nothing here
+                        SizedBox()
+                      ],),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                      Center(
+                      child: text('Sign In', color: COLOR_WHITE)),
+                    ],),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                      Icon(Icons.arrow_forward, color: COLOR_WHITE,)
+                    ],)
+                  ],),
                   onPressed: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
                     return Dashboard();
@@ -68,11 +85,8 @@ class Login extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('Powered by '),
-              Text(
-                'PakStudents',
-                style: TextStyle(color: Theme.of(context).primaryColor),
-              )
+              text('Powered by '),
+              text('PakStudents', color: COLOR_PRIMARY)
             ],
           )
         ],

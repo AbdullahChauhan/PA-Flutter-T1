@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pa_flutter_t1/constants.dart';
 
 class AssignementDetail extends StatelessWidget {
   final String assignmentName;
@@ -13,6 +14,9 @@ class AssignementDetail extends StatelessWidget {
       appBar: AppBar(
         title: Text('Assignment Detail'),
         centerTitle: true,
+        backgroundColor: Colors.white,
+        textTheme: Theme.of(context).textTheme,
+        iconTheme: Theme.of(context).iconTheme,
       ),
       body: Column(
         children: <Widget>[
@@ -31,22 +35,8 @@ class AssignementDetail extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          assignmentName,
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold),
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        ),
-                        Text(
-                          courseName,
-                          style: TextStyle(
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold),
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        ),
+                        text(assignmentName, fontSize: 22.0),
+                        text(courseName, fontSize: 18.0, fontWeight: FontWeight.bold),
                       ],
                     )),
               ],
@@ -58,26 +48,34 @@ class AssignementDetail extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: <Widget>[
-                  Text("Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book."),
-                  SizedBox(height: 16.0,),
-                  Text('You can submit your task till', style: TextStyle(
-                    color: Colors.red
-                  ),),
-                  Text('Date: 10th Jan 2020', style: TextStyle(
-                    color: Theme.of(context).primaryColor
-                  ),),
-                  RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
+                  Text(
+                      "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book."),
+                  SizedBox(
+                    height: 16.0,
                   ),
-                  padding: EdgeInsets.all(12),
-                  color: Theme.of(context).primaryColor,
-                  child: Center(
-                      child: Text(
-                    'Submit Assignment',
-                    style: TextStyle(color: Colors.white),
-                  )), onPressed: () {},
-                ),
+                  Text(
+                    'You can submit your task till',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  SizedBox(height: 4.0,),
+                  Text(
+                    'Date: 10th Jan 2020',
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
+                  SizedBox(height: 16.0,),
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    padding: EdgeInsets.all(12),
+                    color: Theme.of(context).primaryColor,
+                    child: Center(
+                        child: Text(
+                      'Submit Assignment',
+                      style: TextStyle(color: Colors.white),
+                    )),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ),

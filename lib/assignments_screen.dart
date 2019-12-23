@@ -9,6 +9,9 @@ class Assignments extends StatelessWidget {
       appBar: AppBar(
         title: Text('Assignments'),
         centerTitle: true,
+        backgroundColor: Colors.white,
+        textTheme: Theme.of(context).textTheme,
+        iconTheme: Theme.of(context).iconTheme,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
