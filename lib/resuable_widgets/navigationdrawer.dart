@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
-import './assignments_screen.dart';
+import '../constants.dart';
+import './resuable_func.dart';
+import '../screens/assignments_screen.dart';
 
 class NavigationDrawer extends StatelessWidget {
 

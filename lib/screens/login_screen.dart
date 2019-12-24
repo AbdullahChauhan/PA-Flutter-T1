@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
+import '../constants.dart';
+import '../resuable_widgets/resuable_func.dart';
 import './dashboard_screen.dart';
 
 class Login extends StatelessWidget {

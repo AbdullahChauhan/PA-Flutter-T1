@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './assignmentdetail_screen.dart';
+import '../screens/assignmentdetail_screen.dart';
 
 class AssignmentListItem extends StatelessWidget {
   final String assignmentName;

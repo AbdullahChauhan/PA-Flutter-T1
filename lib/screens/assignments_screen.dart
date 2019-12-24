@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './assignment_listitem.dart';
+import '../resuable_widgets/assignment_listitem.dart';
 
 class Assignments extends StatelessWidget {
   @override

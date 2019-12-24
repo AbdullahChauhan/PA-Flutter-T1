@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
-
-import './assignment_listitem.dart';
-import 'navigationdrawer.dart';
+import '../constants.dart';
+import '../resuable_widgets/resuable_func.dart';
+import '../resuable_widgets/navigationdrawer.dart';
+import '../resuable_widgets/assignment_listitem.dart';
 
 class Dashboard extends StatelessWidget {
   @override

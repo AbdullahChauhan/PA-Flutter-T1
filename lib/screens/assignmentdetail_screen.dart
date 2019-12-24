@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
+import '../resuable_widgets/resuable_func.dart';
 
 class AssignementDetail extends StatelessWidget {
   final String assignmentName;
