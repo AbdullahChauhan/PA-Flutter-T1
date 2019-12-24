@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../constants.dart';
 import '../resuable_widgets/assignment_listitem.dart';
 
 class Assignments extends StatelessWidget {
@@ -9,7 +9,7 @@ class Assignments extends StatelessWidget {
       appBar: AppBar(
         title: Text('Assignments'),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: COLOR_WHITE,
         textTheme: Theme.of(context).textTheme,
         iconTheme: Theme.of(context).iconTheme,
       ),
